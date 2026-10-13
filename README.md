@@ -1,5 +1,12 @@
 # Infrastructure Provisioning Portal
 
+## Overview
+
+A small gate for self-service infrastructure requests. The `POST /check` endpoint passes a request only when the resource name matches `^[a-z][a-z0-9-]{2,20}$` and the region is on an allowlist, and it always returns apply as false, so nothing is created. A versioned `/v1` ops API adds workspaces, tenant isolation, job approval and audit records.
+
+- **Built with:** Python, pytest, Docker, GitHub Actions
+- **Scope:** Local laptop proof with tests; it does not call a hosted model and refuses production apply.
+
 <!-- project-guide:start -->
 ## Project guide
 
